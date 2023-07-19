@@ -30,6 +30,20 @@ go mod tidy
 Mysql
 ```
 
+## Run APP
+```
+# run syntax
+docker-compose up -d
+
+# docker will create docker image (swg_go_mysql)
+host: localhost
+port: 3399      
+user: user
+password: password
+database : database
+```
+
+
 
 ## How to setup swagger on (go.mod & GIN)
 ### 
