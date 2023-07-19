@@ -31,6 +31,7 @@ Mysql
 ```
 
 ## Run APP
+[docker-compose.yml](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/docker-compose.yml)
 ```
 # run syntax
 docker-compose up -d
@@ -42,6 +43,9 @@ user: user
 password: password
 database : database
 ```
+
+## postman
+[postman](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/Swagger-GO.18-v%201.0.0.postman_collection.json)
 
 
 
