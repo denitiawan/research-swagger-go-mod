@@ -1,0 +1,423 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "How to implement swagger-ui in Go and gin http client project",
+        "title": "Nexsoft Demo Swagger in GO",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8899",
+    "basePath": "/api",
+    "paths": {
+        "/v1/auth/login": {
+            "post": {
+                "description": "Get JWT token for access all APIs",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "login",
+                "parameters": [
+                    {
+                        "description": "LoginDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/auth.LoginDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/delete/{id}": {
+            "delete": {
+                "description": "delete",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "product"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "description": "ProductDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (ProductDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/list": {
+            "get": {
+                "description": "list",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "product"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "description": "ProductDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (ProductDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/save": {
+            "post": {
+                "description": "save",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "product"
+                ],
+                "summary": "save",
+                "parameters": [
+                    {
+                        "description": "ProductDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (ProductDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/update/{id}": {
+            "put": {
+                "description": "update",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "product"
+                ],
+                "summary": "update",
+                "parameters": [
+                    {
+                        "description": "ProductDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (ProductDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/view/{id}": {
+            "get": {
+                "description": "view",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "product"
+                ],
+                "summary": "view",
+                "parameters": [
+                    {
+                        "description": "ProductDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (ProductDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/product.ProductDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/delete/{id}": {
+            "delete": {
+                "description": "delete",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "description": "UserDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/list": {
+            "get": {
+                "description": "list",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "description": "UserDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/save": {
+            "post": {
+                "description": "save",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "save",
+                "parameters": [
+                    {
+                        "description": "UserDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/update/{id}": {
+            "put": {
+                "description": "update",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "update",
+                "parameters": [
+                    {
+                        "description": "UserDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/view/{id}": {
+            "get": {
+                "description": "view",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "view",
+                "parameters": [
+                    {
+                        "description": "UserDto.go",
+                        "name": "RequestBody",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response Success (UserDto.go)",
+                        "schema": {
+                            "$ref": "#/definitions/user.UserDto"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "auth.LoginDto": {
+            "type": "object",
+            "required": [
+                "password",
+                "username"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                },
+                "username": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                }
+            }
+        },
+        "product.ProductDto": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "maximum": 10,
+                    "minimum": 1
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                }
+            }
+        },
+        "user.UserDto": {
+            "type": "object",
+            "required": [
+                "name",
+                "password",
+                "username"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "maximum": 10,
+                    "minimum": 1
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                },
+                "password": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                },
+                "username": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 1
+                }
+            }
+        }
+    }
+}

@@ -6,9 +6,7 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func APIAuth(db *sql.DB, baseRouter *gin.RouterGroup, validate *validator.Validate) {
-	// base
-	authRoute := baseRouter.Group("/v1/auth")
+func APIAuth(db *sql.DB, basePath *gin.RouterGroup, validate *validator.Validate) {
 
 	// repo,service,controller
 	authRepo := NewAuthRepoImpl(db)
@@ -16,5 +14,6 @@ func APIAuth(db *sql.DB, baseRouter *gin.RouterGroup, validate *validator.Valida
 	authController := NewAuthController(authService)
 
 	// endpoint
+	authRoute := basePath.Group("/v1/auth")
 	authRoute.POST("/login", authController.Login)
 }

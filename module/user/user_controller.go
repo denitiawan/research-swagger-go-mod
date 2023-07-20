@@ -17,27 +17,62 @@ func NewUserController(service UserService) *UserController {
 	}
 }
 
+// @Tags			user
+// @Router			/v1/user/save [post]
+// @Summary			save
+// @Description		save
+// @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Create(ctx *gin.Context) {
 	log.Info().Msg("Create")
 	baseController.CreateWebResponse(http.StatusOK, "OK", "Create", ctx)
 }
 
+// @Tags			user
+// @Router			/v1/user/update/{id} [put]
+// @Summary			update
+// @Description		update
+// @Param			RequestBody body UserDto true "UserDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Update(ctx *gin.Context) {
 	log.Info().Msg("Update")
 	baseController.CreateWebResponse(http.StatusOK, "OK", "Update", ctx)
 }
 
+// @Tags			user
+// @Router			/v1/user/delete/{id} [delete]
+// @Summary			delete
+// @Description		delete
+// @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Delete(ctx *gin.Context) {
 	log.Info().Msg("Delete")
 	baseController.CreateWebResponse(http.StatusOK, "OK", "Delete", ctx)
 }
 
+// @Tags			user
+// @Router			/v1/user/view/{id} [get]
+// @Summary			view
+// @Description		view
+// @Param			RequestBody body UserDto true "UserDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindById(ctx *gin.Context) {
 	log.Info().Msg("Update")
 	baseController.CreateWebResponse(http.StatusOK, "OK", "Update", ctx)
 
 }
 
+// @Tags			user
+// @Router			/v1/user/list [get]
+// @Summary			list
+// @Description		list
+// @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindAll(ctx *gin.Context) {
 	log.Info().Msg("FindAll")
 	baseController.CreateWebResponse(http.StatusOK, "OK", "FindAll", ctx)

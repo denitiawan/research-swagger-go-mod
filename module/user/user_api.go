@@ -6,9 +6,7 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func APIUser(db *sql.DB, baseRouter *gin.RouterGroup, validate *validator.Validate) {
-	// base
-	userRoute := baseRouter.Group("/v1/user")
+func APIUser(db *sql.DB, basePath *gin.RouterGroup, validate *validator.Validate) {
 
 	// repo,service,controller
 	userRepo := NewUserRepoImpl(db)
@@ -16,9 +14,10 @@ func APIUser(db *sql.DB, baseRouter *gin.RouterGroup, validate *validator.Valida
 	userController := NewUserController(userService)
 
 	// endpoint
+	userRoute := basePath.Group("/v1/user")
 	userRoute.GET("/list", userController.FindAll)
-	userRoute.GET("/view/:Id", userController.FindById)
+	userRoute.GET("/view/:id", userController.FindById)
 	userRoute.POST("/save", userController.Create)
-	userRoute.PUT("/update/:Id", userController.Update)
-	userRoute.DELETE("/delete/:Id", userController.Delete)
+	userRoute.PUT("/update/:id", userController.Update)
+	userRoute.DELETE("/delete/:id", userController.Delete)
 }

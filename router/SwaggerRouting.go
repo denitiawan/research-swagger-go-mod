@@ -6,7 +6,8 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-func SwaggerRouting(host string, router *gin.Engine) {
-	url := ginSwagger.URL(host + "/swagger/doc.json")
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
+// path swagger is customable
+// path (/*any) is required for load the html page own by swagger
+func SwaggerRouting(router *gin.Engine) {
+	router.GET("nexsoft/doc/api/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }

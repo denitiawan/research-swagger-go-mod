@@ -18,6 +18,13 @@ func NewAuthController(service AuthService) *AuthController {
 	}
 }
 
+// @Tags			auth
+// @Router			/v1/auth/login [post]
+// @Summary			login
+// @Description		Get JWT token for access all APIs
+// @Param			RequestBody body LoginDto true "LoginDto.go"
+// @Produce			application/json
+// @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *AuthController) Login(ctx *gin.Context) {
 	log.Info().Msg("Login")
 	requestDto := LoginDto{}

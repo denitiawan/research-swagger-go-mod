@@ -1,0 +1,280 @@
+basePath: /api
+definitions:
+  auth.LoginDto:
+    properties:
+      password:
+        maxLength: 200
+        minLength: 1
+        type: string
+      username:
+        maxLength: 200
+        minLength: 1
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  product.ProductDto:
+    properties:
+      id:
+        maximum: 10
+        minimum: 1
+        type: integer
+      name:
+        maxLength: 200
+        minLength: 1
+        type: string
+    required:
+    - name
+    type: object
+  user.UserDto:
+    properties:
+      id:
+        maximum: 10
+        minimum: 1
+        type: integer
+      name:
+        maxLength: 200
+        minLength: 1
+        type: string
+      password:
+        maxLength: 200
+        minLength: 1
+        type: string
+      username:
+        maxLength: 200
+        minLength: 1
+        type: string
+    required:
+    - name
+    - password
+    - username
+    type: object
+host: localhost:8899
+info:
+  contact: {}
+  description: How to implement swagger-ui in Go and gin http client project
+  title: Nexsoft Demo Swagger in GO
+  version: "1.0"
+paths:
+  /v1/auth/login:
+    post:
+      description: Get JWT token for access all APIs
+      parameters:
+      - description: LoginDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/auth.LoginDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: login
+      tags:
+      - auth
+  /v1/product/delete/{id}:
+    delete:
+      description: delete
+      parameters:
+      - description: ProductDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/product.ProductDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (ProductDto.go)
+          schema:
+            $ref: '#/definitions/product.ProductDto'
+      summary: delete
+      tags:
+      - product
+  /v1/product/list:
+    get:
+      description: list
+      parameters:
+      - description: ProductDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/product.ProductDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (ProductDto.go)
+          schema:
+            $ref: '#/definitions/product.ProductDto'
+      summary: list
+      tags:
+      - product
+  /v1/product/save:
+    post:
+      description: save
+      parameters:
+      - description: ProductDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/product.ProductDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (ProductDto.go)
+          schema:
+            $ref: '#/definitions/product.ProductDto'
+      summary: save
+      tags:
+      - product
+  /v1/product/update/{id}:
+    put:
+      description: update
+      parameters:
+      - description: ProductDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/product.ProductDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (ProductDto.go)
+          schema:
+            $ref: '#/definitions/product.ProductDto'
+      summary: update
+      tags:
+      - product
+  /v1/product/view/{id}:
+    get:
+      description: view
+      parameters:
+      - description: ProductDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/product.ProductDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (ProductDto.go)
+          schema:
+            $ref: '#/definitions/product.ProductDto'
+      summary: view
+      tags:
+      - product
+  /v1/user/delete/{id}:
+    delete:
+      description: delete
+      parameters:
+      - description: UserDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: delete
+      tags:
+      - user
+  /v1/user/list:
+    get:
+      description: list
+      parameters:
+      - description: UserDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: list
+      tags:
+      - user
+  /v1/user/save:
+    post:
+      description: save
+      parameters:
+      - description: UserDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: save
+      tags:
+      - user
+  /v1/user/update/{id}:
+    put:
+      description: update
+      parameters:
+      - description: UserDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: update
+      tags:
+      - user
+  /v1/user/view/{id}:
+    get:
+      description: view
+      parameters:
+      - description: UserDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (UserDto.go)
+          schema:
+            $ref: '#/definitions/user.UserDto'
+      summary: view
+      tags:
+      - user
+swagger: "2.0"
