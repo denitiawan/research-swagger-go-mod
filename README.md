@@ -2,6 +2,9 @@
 
 Research how to implement swagger on go (go.mod) using gin
 
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/961c63b7-eb50-42f7-9f54-3381631fd641)
+
+
 ## Librarries
 
 ```
