@@ -2,9 +2,9 @@
     "swagger": "2.0",
     "info": {
         "description": "How to implement swagger-ui in Go and gin http client project",
-        "title": "Nexsoft Demo Swagger in GO",
+        "title": "Nexsoft Demo Swagger in GO (gin)",
         "contact": {},
-        "version": "1.0"
+        "version": "1.1.0"
     },
     "host": "localhost:8899",
     "basePath": "/api",

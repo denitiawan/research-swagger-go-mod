@@ -18,7 +18,7 @@ import (
 // url swagger-ui 	: http://localhost:8899/nexsoft/doc/api/swagger/index.html
 // --------------------------------------------------
 // @version		1.1.0
-// @title 		Nexsoft Demo Swagger in GO
+// @title 		Nexsoft Demo Swagger in GO (gin)
 // @description How to implement swagger-ui in Go and gin http client project
 // @host 		localhost:8899
 // @BasePath 	/api
