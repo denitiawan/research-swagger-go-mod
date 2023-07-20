@@ -55,4 +55,5 @@ database : database
 [postman](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/postman/Swagger-GO.18-v%201.0.0.postman_collection.json)
 
 ## How to setup swagger on (go.mod & GIN)
-[Setup Swagger](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/readme/setup_swagger.md)
+- [Setup Swagger in GO + Gin](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/readme/setup_swagger.md)
+- [Add Authorize Button for testing API](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/readme/setup_swagger_authorize.md)
