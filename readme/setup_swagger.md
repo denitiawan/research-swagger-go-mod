@@ -1,6 +1,7 @@
 [Back](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/README.md)
 
 ## How to setup swagger on (go.mod & GIN)
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/961c63b7-eb50-42f7-9f54-3381631fd641)
 
 ### 1. Install Swagger-CLI
 
