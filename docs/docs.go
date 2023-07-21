@@ -59,13 +59,11 @@ const docTemplate = `{
                 "summary": "delete",
                 "parameters": [
                     {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -88,17 +86,6 @@ const docTemplate = `{
                     "product"
                 ],
                 "summary": "list",
-                "parameters": [
-                    {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Response Success (ProductDto.go)",
@@ -152,6 +139,13 @@ const docTemplate = `{
                 "summary": "update",
                 "parameters": [
                     {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
                         "description": "ProductDto.go",
                         "name": "RequestBody",
                         "in": "body",
@@ -183,13 +177,11 @@ const docTemplate = `{
                 "summary": "view",
                 "parameters": [
                     {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -214,13 +206,11 @@ const docTemplate = `{
                 "summary": "delete",
                 "parameters": [
                     {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -243,17 +233,6 @@ const docTemplate = `{
                     "user"
                 ],
                 "summary": "list",
-                "parameters": [
-                    {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Response Success (UserDto.go)",
@@ -307,6 +286,13 @@ const docTemplate = `{
                 "summary": "update",
                 "parameters": [
                     {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
                         "description": "UserDto.go",
                         "name": "RequestBody",
                         "in": "body",
@@ -338,13 +324,11 @@ const docTemplate = `{
                 "summary": "view",
                 "parameters": [
                     {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {

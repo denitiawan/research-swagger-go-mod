@@ -81,12 +81,11 @@ paths:
     delete:
       description: delete
       parameters:
-      - description: ProductDto.go
-        in: body
-        name: RequestBody
+      - description: id
+        in: path
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/product.ProductDto'
+        type: integer
       produces:
       - application/json
       responses:
@@ -100,13 +99,6 @@ paths:
   /v1/product/list:
     get:
       description: list
-      parameters:
-      - description: ProductDto.go
-        in: body
-        name: RequestBody
-        required: true
-        schema:
-          $ref: '#/definitions/product.ProductDto'
       produces:
       - application/json
       responses:
@@ -141,6 +133,11 @@ paths:
     put:
       description: update
       parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
       - description: ProductDto.go
         in: body
         name: RequestBody
@@ -161,12 +158,11 @@ paths:
     get:
       description: view
       parameters:
-      - description: ProductDto.go
-        in: body
-        name: RequestBody
+      - description: id
+        in: path
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/product.ProductDto'
+        type: integer
       produces:
       - application/json
       responses:
@@ -181,12 +177,11 @@ paths:
     delete:
       description: delete
       parameters:
-      - description: UserDto.go
-        in: body
-        name: RequestBody
+      - description: id
+        in: path
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/user.UserDto'
+        type: integer
       produces:
       - application/json
       responses:
@@ -200,13 +195,6 @@ paths:
   /v1/user/list:
     get:
       description: list
-      parameters:
-      - description: UserDto.go
-        in: body
-        name: RequestBody
-        required: true
-        schema:
-          $ref: '#/definitions/user.UserDto'
       produces:
       - application/json
       responses:
@@ -241,6 +229,11 @@ paths:
     put:
       description: update
       parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
       - description: UserDto.go
         in: body
         name: RequestBody
@@ -261,12 +254,11 @@ paths:
     get:
       description: view
       parameters:
-      - description: UserDto.go
-        in: body
-        name: RequestBody
+      - description: id
+        in: path
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/user.UserDto'
+        type: integer
       produces:
       - application/json
       responses:

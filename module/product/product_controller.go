@@ -33,6 +33,7 @@ func (controller *ProductController) Create(ctx *gin.Context) {
 // @Router			/v1/product/update/{id} [put]
 // @Summary			update
 // @Description		update
+// @Param			id  path int true "id"
 // @Param			RequestBody body product.ProductDto true "ProductDto.go"
 // @Produce			application/json
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
@@ -45,7 +46,7 @@ func (controller *ProductController) Update(ctx *gin.Context) {
 // @Router			/v1/product/delete/{id} [delete]
 // @Summary			delete
 // @Description		delete
-// @Param			RequestBody body product.ProductDto true "ProductDto.go"
+// @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) Delete(ctx *gin.Context) {
@@ -57,7 +58,7 @@ func (controller *ProductController) Delete(ctx *gin.Context) {
 // @Router			/v1/product/view/{id} [get]
 // @Summary			view
 // @Description		view
-// @Param			RequestBody body product.ProductDto true "ProductDto.go"
+// @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) FindById(ctx *gin.Context) {
@@ -69,7 +70,6 @@ func (controller *ProductController) FindById(ctx *gin.Context) {
 // @Router			/v1/product/list [get]
 // @Summary			list
 // @Description		list
-// @Param			RequestBody body product.ProductDto true "ProductDto.go"
 // @Produce			application/json
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) FindAll(ctx *gin.Context) {

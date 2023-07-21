@@ -52,13 +52,11 @@
                 "summary": "delete",
                 "parameters": [
                     {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -81,17 +79,6 @@
                     "product"
                 ],
                 "summary": "list",
-                "parameters": [
-                    {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Response Success (ProductDto.go)",
@@ -145,6 +132,13 @@
                 "summary": "update",
                 "parameters": [
                     {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
                         "description": "ProductDto.go",
                         "name": "RequestBody",
                         "in": "body",
@@ -176,13 +170,11 @@
                 "summary": "view",
                 "parameters": [
                     {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -207,13 +199,11 @@
                 "summary": "delete",
                 "parameters": [
                     {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -236,17 +226,6 @@
                     "user"
                 ],
                 "summary": "list",
-                "parameters": [
-                    {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Response Success (UserDto.go)",
@@ -300,6 +279,13 @@
                 "summary": "update",
                 "parameters": [
                     {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
                         "description": "UserDto.go",
                         "name": "RequestBody",
                         "in": "body",
@@ -331,13 +317,11 @@
                 "summary": "view",
                 "parameters": [
                     {
-                        "description": "UserDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/user.UserDto"
-                        }
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {

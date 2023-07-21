@@ -33,6 +33,7 @@ func (controller *UserController) Create(ctx *gin.Context) {
 // @Router			/v1/user/update/{id} [put]
 // @Summary			update
 // @Description		update
+// @Param			id  path int true "id"
 // @Param			RequestBody body UserDto true "UserDto.go"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
@@ -45,7 +46,7 @@ func (controller *UserController) Update(ctx *gin.Context) {
 // @Router			/v1/user/delete/{id} [delete]
 // @Summary			delete
 // @Description		delete
-// @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Delete(ctx *gin.Context) {
@@ -57,7 +58,7 @@ func (controller *UserController) Delete(ctx *gin.Context) {
 // @Router			/v1/user/view/{id} [get]
 // @Summary			view
 // @Description		view
-// @Param			RequestBody body UserDto true "UserDto.go"
+// @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindById(ctx *gin.Context) {
@@ -70,7 +71,6 @@ func (controller *UserController) FindById(ctx *gin.Context) {
 // @Router			/v1/user/list [get]
 // @Summary			list
 // @Description		list
-// @Param			RequestBody body user.UserDto true "UserDto.go"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindAll(ctx *gin.Context) {
