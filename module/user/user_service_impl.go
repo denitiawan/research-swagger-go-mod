@@ -2,6 +2,7 @@ package user
 
 import (
 	"denitiawan/research-swagger-gomod-gin/common/dto"
+	"denitiawan/research-swagger-gomod-gin/security"
 	"github.com/go-playground/validator/v10"
 )
 
@@ -27,11 +28,17 @@ func (t *UserServiceImpl) Create(requestDto UserDto) *dto.ImplResponse {
 		return dto.NewImplResponse(t.Class, function, "validate dto failed", err, nil)
 	}
 
+	// generate password
+	password, err := security.HashPassword(requestDto.Password)
+	if err != nil {
+		return dto.NewImplResponse(t.Class, function, "Failed to generate password", err, nil)
+	}
+
 	// model
-	model := NewUser(0, requestDto.Name, requestDto.Username, requestDto.Password)
+	model := NewUser(0, requestDto.Name, requestDto.Username, password)
 
 	// repo
-	res := t.UserRepo.Save(model)
+	res := t.UserRepo.Create(model)
 	if res.Error != nil {
 		return dto.NewImplResponse(res.Class, res.Function, res.Message, res.Error, nil)
 	}

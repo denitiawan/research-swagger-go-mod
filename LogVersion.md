@@ -24,11 +24,17 @@
 [done in 24/07/2023 - 02:17 25.07.2023]
 - implement CRUD funtion to UserRepo  (Create, Update , Delete, FindById, FindAll)
 
-## version : 1.4.0 | release date : 24/07/2023 
-- create function generate password for user (JWT)
+## version : 1.4.0 | release date : 25/07/2023
+- Config : implement load Config using librarry (spf13/viper)
+- Env : impelement .env for split dev and docker environtment
+- Create User API : implement generate password (OAuth0) JWT
+- login API : implement genereate Token JWT Bearer
+- Middleware : implement validation JWT token when user hit all APIs
 
-## version : 1.5.0 | release date : 24/07/2023
-- implement JWT Auhtentication / Authorization 
+## version : 1.5.0 | release date : 25/07/2023
+implement swagger Authorization button
+
+
 
 
 

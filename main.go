@@ -26,11 +26,15 @@ func main() {
 
 	log.Info().Msg("Try to start Application!")
 
+	// App Config
+	appConfig, err := config.LoadConfig(".", "dev")
+	error.ErrorPanic(err)
+
 	// # Database Connection
-	db := config.DatabaseConnection()
+	db := config.DatabaseConnection(appConfig)
 
 	// # Database Migration
-	config.DatabaseMigration(db)
+	config.DatabaseMigration(appConfig, db)
 
 	// # Route Initialization
 	appRoute := router.NewRouterInit()
@@ -45,7 +49,7 @@ func main() {
 	router.APIWelcome(appRoute)
 
 	// # ALL APIs Routing
-	router.APIRouting(db, basePath)
+	router.APIRouting(appConfig, db, basePath)
 
 	// # Server
 	server := &http.Server{
@@ -55,7 +59,7 @@ func main() {
 	log.Info().Msg("Yea Boy!.. Application is running!")
 
 	// # Serve
-	err := server.ListenAndServe()
+	err = server.ListenAndServe()
 	error.ErrorPanic(err)
 
 	defer db.Close()

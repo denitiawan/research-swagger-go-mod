@@ -1,9 +1,9 @@
 package auth
 
 import (
-	"denitiawan/research-swagger-gomod-gin/module/user"
+	"denitiawan/research-swagger-gomod-gin/common/dto"
 )
 
 type AuthService interface {
-	Login(requestDto LoginDto) user.UserDto
+	Login(requestDto LoginDto) *dto.ImplResponse
 }

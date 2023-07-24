@@ -8,18 +8,9 @@ import (
 	migrate "github.com/rubenv/sql-migrate"
 )
 
-const (
-	host       = "localhost"
-	port       = "3399"
-	user       = "user"
-	password   = "password"
-	database   = "database"
-	driverName = "mysql"
-)
+func DatabaseConnection(appConfig AppConfig) *sql.DB {
 
-func DatabaseConnection() *sql.DB {
-
-	db, err := sql.Open(driverName, user+":"+password+"@tcp("+host+":"+port+")/"+database+"?parseTime=true")
+	db, err := sql.Open(appConfig.DBDriverName, appConfig.DBUsername+":"+appConfig.DBPassword+"@tcp("+appConfig.DBHost+":"+appConfig.DBPort+")/"+appConfig.DBName+"?parseTime=true")
 	if err != nil {
 		log.Error().Msg(err.Error())
 		return nil
@@ -30,7 +21,7 @@ func DatabaseConnection() *sql.DB {
 	return db
 }
 
-func DatabaseMigration(db *sql.DB) {
+func DatabaseMigration(appConfig AppConfig, db *sql.DB) {
 
 	// Read migrations from a folder:
 	migrations := &migrate.FileMigrationSource{
@@ -38,7 +29,7 @@ func DatabaseMigration(db *sql.DB) {
 	}
 
 	// Execution all migration files
-	n, err := migrate.Exec(db, driverName, migrations, migrate.Up)
+	n, err := migrate.Exec(db, appConfig.DBDriverName, migrations, migrate.Up)
 	if err != nil {
 		log.Error().Msg("Errror Migration... " + err.Error())
 		return

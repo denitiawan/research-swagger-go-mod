@@ -1,7 +1,9 @@
 package router
 
 import (
+	"context"
 	"database/sql"
+	"denitiawan/research-swagger-gomod-gin/config"
 	"denitiawan/research-swagger-gomod-gin/module/auth"
 	"denitiawan/research-swagger-gomod-gin/module/category"
 	"denitiawan/research-swagger-gomod-gin/module/product"
@@ -10,15 +12,18 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func APIRouting(db *sql.DB, basePath *gin.RouterGroup) {
+func APIRouting(appConfig config.AppConfig, db *sql.DB, basePath *gin.RouterGroup) {
+
+	// # context
+	context := context.Background()
 
 	// # Validator
 	validate := validator.New()
 
 	// # API Registrations
-	auth.APIAuth(db, basePath, validate)
-	user.APIUser(db, basePath, validate)
-	product.APIProduct(db, basePath, validate)
-	category.APICategory(db, basePath, validate)
+	auth.APIAuth(appConfig, context, db, basePath, validate)
+	user.APIUser(appConfig, context, db, basePath, validate)
+	product.APIProduct(appConfig, context, db, basePath, validate)
+	category.APICategory(appConfig, context, db, basePath, validate)
 
 }
