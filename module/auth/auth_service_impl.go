@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"denitiawan/research-swagger-gomod-gin/common/helper"
+	"denitiawan/research-swagger-gomod-gin/common/error"
 	"denitiawan/research-swagger-gomod-gin/module/user"
 	"github.com/go-playground/validator/v10"
 )
@@ -22,11 +22,11 @@ func (t *AuthServiceImpl) Login(requestDto LoginDto) user.UserDto {
 
 	// validate
 	err := t.Validate.Struct(requestDto)
-	helper.ErrorPanic(err)
+	error.ErrorPanic(err)
 
 	// repo
 	//data, err := t.AuthRepo.Login(requestDto.Username, requestDto.Password)
-	//helper.ErrorPanic(err)
+	//error.ErrorPanic(err)
 
 	//response := user.UserDto{
 	//	Id:       data.Id,

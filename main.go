@@ -1,7 +1,7 @@
 package main
 
 import (
-	"denitiawan/research-swagger-gomod-gin/common/helper"
+	"denitiawan/research-swagger-gomod-gin/common/error"
 	"denitiawan/research-swagger-gomod-gin/config"
 	_ "denitiawan/research-swagger-gomod-gin/docs"
 	"denitiawan/research-swagger-gomod-gin/router"
@@ -24,13 +24,13 @@ import (
 // @BasePath 	/api
 func main() {
 
-	log.Info().Msg("Started Server!")
+	log.Info().Msg("Try to start Application!")
 
 	// # Database Connection
 	db := config.DatabaseConnection()
 
 	// # Database Migration
-	//config.DatabaseMigration(db)
+	config.DatabaseMigration(db)
 
 	// # Route Initialization
 	appRoute := router.NewRouterInit()
@@ -39,7 +39,7 @@ func main() {
 	basePath := appRoute.Group("/api")
 
 	// # API Swagger Routing
-	router.SwaggerRouting(appRoute)
+	config.SwaggerRouting(appRoute)
 
 	// # API Welcome
 	router.APIWelcome(appRoute)
@@ -52,10 +52,12 @@ func main() {
 		Addr:    ":8899",
 		Handler: appRoute,
 	}
+	log.Info().Msg("Yea Boy!.. Application is running!")
 
 	// # Serve
 	err := server.ListenAndServe()
-	helper.ErrorPanic(err)
+	error.ErrorPanic(err)
 
 	defer db.Close()
+
 }

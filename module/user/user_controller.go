@@ -5,15 +5,16 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 	"net/http"
+	"strconv"
 )
 
 type UserController struct {
-	prodcutService UserService
+	service UserService
 }
 
 func NewUserController(service UserService) *UserController {
 	return &UserController{
-		prodcutService: service,
+		service: service,
 	}
 }
 
@@ -26,7 +27,24 @@ func NewUserController(service UserService) *UserController {
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Create(ctx *gin.Context) {
 	log.Info().Msg("Create")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Create", ctx)
+
+	// req body
+	dto := UserDto{}
+	err := ctx.ShouldBindJSON(&dto)
+	if err != nil {
+		baseController.BadRequest(http.StatusBadRequest, "invalid req body", dto, err.Error(), ctx)
+		return
+	}
+
+	// service
+	response := controller.service.Create(dto)
+	if response.Error != nil {
+		baseController.Error(http.StatusInternalServerError, response.Message, dto, response.ErrorMessage, ctx)
+		return
+	}
+
+	// ok
+	baseController.OK(http.StatusOK, response.Message, response.Data, "", ctx)
 }
 
 // @Tags			user
@@ -39,7 +57,28 @@ func (controller *UserController) Create(ctx *gin.Context) {
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Update(ctx *gin.Context) {
 	log.Info().Msg("Update")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Update", ctx)
+
+	// path
+	param := ctx.Param("id")
+	id, _ := strconv.ParseInt(param, 0, 64)
+
+	// req body
+	dto := UserDto{}
+	err := ctx.ShouldBindJSON(&dto)
+	if err != nil {
+		baseController.BadRequest(http.StatusBadRequest, "invalid req body", dto, err.Error(), ctx)
+		return
+	}
+
+	// service
+	response := controller.service.Update(id, dto)
+	if response.Error != nil {
+		baseController.Error(http.StatusInternalServerError, response.Message, param, response.ErrorMessage, ctx)
+		return
+	}
+
+	// ok
+	baseController.OK(http.StatusOK, response.Message, response.Data, "", ctx)
 }
 
 // @Tags			user
@@ -51,7 +90,19 @@ func (controller *UserController) Update(ctx *gin.Context) {
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Delete(ctx *gin.Context) {
 	log.Info().Msg("Delete")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Delete", ctx)
+
+	param := ctx.Param("id")
+	id, _ := strconv.ParseInt(param, 0, 64)
+
+	// service
+	response := controller.service.Delete(id)
+	if response.Error != nil {
+		baseController.Error(http.StatusInternalServerError, response.Message, param, response.ErrorMessage, ctx)
+		return
+	}
+
+	// ok
+	baseController.OK(http.StatusOK, response.Message, response.Data, "", ctx)
 }
 
 // @Tags			user
@@ -62,8 +113,21 @@ func (controller *UserController) Delete(ctx *gin.Context) {
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindById(ctx *gin.Context) {
-	log.Info().Msg("Update")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Update", ctx)
+	log.Info().Msg("FindById")
+
+	//-----------log.Info().Msg("FindById")
+	param := ctx.Param("id")
+	id, _ := strconv.ParseInt(param, 0, 64)
+
+	// service
+	response := controller.service.FindById(id)
+	if response.Error != nil {
+		baseController.Error(http.StatusInternalServerError, response.Message, param, response.ErrorMessage, ctx)
+		return
+	}
+
+	// ok
+	baseController.OK(http.StatusOK, response.Message, response.Data, "", ctx)
 
 }
 
@@ -75,48 +139,14 @@ func (controller *UserController) FindById(ctx *gin.Context) {
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindAll(ctx *gin.Context) {
 	log.Info().Msg("FindAll")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "FindAll", ctx)
+
+	// service
+	response := controller.service.FindAll()
+	if response.Error != nil {
+		baseController.Error(http.StatusInternalServerError, response.Message, []User{}, response.ErrorMessage, ctx)
+		return
+	}
+
+	// ok
+	baseController.OK(http.StatusOK, response.Message, response.Data, "", ctx)
 }
-
-//log.Info().Msg("delete tags")
-//tagId := ctx.Param("tagId")
-//id, err := strconv.Atoi(tagId)
-//helper.ErrorPanic(err)
-//controller.prodcutService.Delete(id)
-//
-//responseBody := dto.WebResponse{
-//	Code:   http.StatusOK,
-//	Status: "Ok",
-//	Data:   nil,
-//}
-//ctx.Header("Content-Type", "application/json")
-//ctx.JSON(http.StatusOK, responseBody)
-
-//log.Info().Msg("findbyid tags")
-//tagId := ctx.Param("tagId")
-//id, err := strconv.Atoi(tagId)
-//helper.ErrorPanic(err)
-//
-//data := controller.prodcutService.FindById(id)
-//
-//responseBody := dto.WebResponse{
-//	Code:   http.StatusOK,
-//	Status: "Ok",
-//	Data:   data,
-//}
-//ctx.Header("Content-Type", "application/json")
-//ctx.JSON(http.StatusOK, responseBody)
-
-//log.Info().Msg("create tags")
-//createTagsRequest := dto.UserDto{}
-//err := ctx.ShouldBindJSON(&createTagsRequest)
-//helper.ErrorPanic(err)
-//
-//controller.prodcutService.Create(createTagsRequest)
-//responseBody := dto.WebResponse{
-//	Code:   http.StatusOK,
-//	Status: "Ok",
-//	Data:   nil,
-//}
-//ctx.Header("Content-Type", "application/json")
-//ctx.JSON(http.StatusOK, responseBody)

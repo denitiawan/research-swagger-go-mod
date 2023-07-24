@@ -26,7 +26,7 @@ func NewProductController(service ProductService) *ProductController {
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) Create(ctx *gin.Context) {
 	log.Info().Msg("Create")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Create", ctx)
+	baseController.OK(http.StatusOK, "", nil, "", ctx)
 }
 
 // @Tags			product
@@ -39,7 +39,7 @@ func (controller *ProductController) Create(ctx *gin.Context) {
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) Update(ctx *gin.Context) {
 	log.Info().Msg("Update")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Update", ctx)
+	baseController.OK(http.StatusOK, "", nil, "", ctx)
 }
 
 // @Tags			product
@@ -51,7 +51,7 @@ func (controller *ProductController) Update(ctx *gin.Context) {
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) Delete(ctx *gin.Context) {
 	log.Info().Msg("Delete")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "Delete", ctx)
+	baseController.OK(http.StatusOK, "", nil, "", ctx)
 }
 
 // @Tags			product
@@ -63,7 +63,7 @@ func (controller *ProductController) Delete(ctx *gin.Context) {
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) FindById(ctx *gin.Context) {
 	log.Info().Msg("FindById")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "FindById", ctx)
+	baseController.OK(http.StatusOK, "", nil, "", ctx)
 }
 
 // @Tags			product
@@ -74,5 +74,5 @@ func (controller *ProductController) FindById(ctx *gin.Context) {
 // @Success			200 {object} product.ProductDto{} "Response Success (ProductDto.go)"
 func (controller *ProductController) FindAll(ctx *gin.Context) {
 	log.Info().Msg("findAll")
-	baseController.CreateWebResponse(http.StatusOK, "OK", "findAll", ctx)
+	baseController.OK(http.StatusOK, "", nil, "", ctx)
 }

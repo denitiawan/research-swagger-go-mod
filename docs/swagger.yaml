@@ -14,7 +14,7 @@ definitions:
     - password
     - username
     type: object
-  product.ProductDto:
+  category.CategoryDto:
     properties:
       id:
         maximum: 10
@@ -26,6 +26,24 @@ definitions:
         type: string
     required:
     - name
+    type: object
+  product.ProductDto:
+    properties:
+      id:
+        maximum: 10
+        minimum: 1
+        type: integer
+      name:
+        maxLength: 200
+        minLength: 1
+        type: string
+      price:
+        maximum: 11
+        minimum: 1
+        type: number
+    required:
+    - name
+    - price
     type: object
   user.UserDto:
     properties:
@@ -77,6 +95,102 @@ paths:
       summary: login
       tags:
       - auth
+  /v1/category/delete/{id}:
+    delete:
+      description: delete
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (CategoryDto.go)
+          schema:
+            $ref: '#/definitions/category.CategoryDto'
+      summary: delete
+      tags:
+      - category
+  /v1/category/list:
+    get:
+      description: list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (CategoryDto.go)
+          schema:
+            $ref: '#/definitions/category.CategoryDto'
+      summary: list
+      tags:
+      - category
+  /v1/category/save:
+    post:
+      description: save
+      parameters:
+      - description: CategoryDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/category.CategoryDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (CategoryDto.go)
+          schema:
+            $ref: '#/definitions/category.CategoryDto'
+      summary: save
+      tags:
+      - category
+  /v1/category/update/{id}:
+    put:
+      description: update
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: CategoryDto.go
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/category.CategoryDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (CategoryDto.go)
+          schema:
+            $ref: '#/definitions/category.CategoryDto'
+      summary: update
+      tags:
+      - category
+  /v1/category/view/{id}:
+    get:
+      description: view
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Success (CategoryDto.go)
+          schema:
+            $ref: '#/definitions/category.CategoryDto'
+      summary: view
+      tags:
+      - category
   /v1/product/delete/{id}:
     delete:
       description: delete

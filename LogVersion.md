@@ -16,5 +16,19 @@
 - configure app info for swagger-ui
 - configure controller for swagger-ui
 
+## version : 1.2.0 | release date : 22/07/2023
+[done in 22:00 - 00:53 22.07.2023]
+- add migration database 
+
+## version : 1.3.0 | release date : 25/07/2023
+[done in 24/07/2023 - 02:17 25.07.2023]
+- implement CRUD funtion to UserRepo  (Create, Update , Delete, FindById, FindAll)
+
+## version : 1.4.0 | release date : 24/07/2023 
+- create function generate password for user (JWT)
+
+## version : 1.5.0 | release date : 24/07/2023
+- implement JWT Auhtentication / Authorization 
+
 
 

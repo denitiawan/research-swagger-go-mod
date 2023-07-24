@@ -36,7 +36,7 @@ Mysql
 
 ## Run APP
 
-[docker-compose.yml](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/docker-compose/docker-compose.yml)
+[docker-compose.yml](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/docker-compose/docker-compose.yml)
 
 ```
 # run syntax
@@ -52,8 +52,8 @@ database : database
 
 ## postman
 
-[postman](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/postman/Swagger-GO.18-v%201.0.0.postman_collection.json)
+[postman](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/postman/Swagger-GO.18-v%201.0.0.postman_collection.json)
 
 ## How to setup swagger on (go.mod & GIN)
-- [Setup Swagger in GO + Gin](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/readme/setup_swagger.md)
-- [Add Authorize Button for testing API](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/readme/setup_swagger_authorize.md)
+- [Setup Swagger in GO + Gin](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/readme/setup_swagger.md)
+- [Add Authorize Button for testing API](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/readme/setup_swagger_authorize.md)

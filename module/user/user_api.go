@@ -1,6 +1,7 @@
 package user
 
 import (
+	"context"
 	"database/sql"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -8,8 +9,10 @@ import (
 
 func APIUser(db *sql.DB, basePath *gin.RouterGroup, validate *validator.Validate) {
 
+	context := context.Background()
+
 	// repo,service,controller
-	userRepo := NewUserRepoImpl(db)
+	userRepo := NewUserRepoImpl(context, db)
 	userService := NewUserServiceImpl(userRepo, validate)
 	userController := NewUserController(userService)
 

@@ -18,7 +18,7 @@ func NewProductServiceImpl(repo ProductRepo, validate *validator.Validate) Produ
 
 func (t *ProductServiceImpl) Create(dto ProductDto) {
 	//err := t.Validate.Struct(dto)
-	//helper.ErrorPanic(err)
+	//error.ErrorPanic(err)
 	//productModel := Product{
 	//	Name: dto.Name,
 	//}
@@ -47,7 +47,7 @@ func (t *ProductServiceImpl) FindAll() []ProductDto {
 
 func (t *ProductServiceImpl) FindById(dtoId int) ProductDto {
 	//productData, err := t.ProductRepo.FindById(dtoId)
-	//helper.ErrorPanic(err)
+	//error.ErrorPanic(err)
 	//
 	//productResponse := ProductDto{
 	//	Id:   productData.Id,
@@ -59,7 +59,7 @@ func (t *ProductServiceImpl) FindById(dtoId int) ProductDto {
 
 func (t *ProductServiceImpl) Update(dto ProductDto) {
 	//productData, err := t.ProductRepo.FindById(dto.Id)
-	//helper.ErrorPanic(err)
+	//error.ErrorPanic(err)
 	//productData.Name = dto.Name
 	//t.ProductRepo.Update(productData)
 }
