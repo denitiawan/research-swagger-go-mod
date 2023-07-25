@@ -560,9 +560,7 @@ const docTemplate = `{
             ],
             "properties": {
                 "id": {
-                    "type": "integer",
-                    "maximum": 10,
-                    "minimum": 1
+                    "type": "integer"
                 },
                 "name": {
                     "type": "string",

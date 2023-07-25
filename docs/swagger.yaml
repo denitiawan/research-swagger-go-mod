@@ -48,8 +48,6 @@ definitions:
   user.UserDto:
     properties:
       id:
-        maximum: 10
-        minimum: 1
         type: integer
       name:
         maxLength: 200

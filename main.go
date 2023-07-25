@@ -22,6 +22,8 @@ import (
 // @description How to implement swagger-ui in Go and gin http client project
 // @host 		localhost:8899
 // @BasePath 	/api
+
+//
 func main() {
 
 	log.Info().Msg("Try to start Application!")
