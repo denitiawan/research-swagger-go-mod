@@ -59,4 +59,3 @@ database : database
 
 ## How to setup swagger on (go.mod & GIN)
 - [Setup Swagger in GO + Gin](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/readme/setup_swagger.md)
-- [Add Authorize Button for testing API](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/readme/setup_swagger_authorize.md)
