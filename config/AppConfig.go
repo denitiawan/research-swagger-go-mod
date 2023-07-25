@@ -7,7 +7,7 @@ import (
 
 type AppConfig struct {
 	// APP
-	ServerPort string `mapstructure:"APP_PORT"`
+	ServerPort string `mapstructure:"SERVER_PORT"`
 
 	// DB
 	DBHost       string `mapstructure:"DB_HOST"`

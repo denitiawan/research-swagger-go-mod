@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "How to implement swagger-ui in Go and gin http client project",
-        "title": "Nexsoft Demo Swagger in GO (gin)",
+        "description": "Implement swagger-ui on Go project with gin (web framework) + JWT Authorization",
+        "title": "Demo Swagger-UI (GO+GIN) for Nexsoft Project",
         "contact": {},
         "version": "1.1.0"
     },

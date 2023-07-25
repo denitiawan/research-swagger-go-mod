@@ -5,6 +5,7 @@ import (
 	"denitiawan/research-swagger-gomod-gin/config"
 	_ "denitiawan/research-swagger-gomod-gin/docs"
 	"denitiawan/research-swagger-gomod-gin/router"
+	"fmt"
 	"github.com/rs/zerolog/log"
 	"net/http"
 )
@@ -18,8 +19,8 @@ import (
 // url swagger-ui 	: http://localhost:8899/nexsoft/doc/api/swagger/index.html
 // --------------------------------------------------
 // @version		1.1.0
-// @title 		Nexsoft Demo Swagger in GO (gin)
-// @description How to implement swagger-ui in Go and gin http client project
+// @title 		Demo Swagger-UI (GO+GIN) for Nexsoft Project
+// @description Implement swagger-ui on Go project with gin (web framework) + JWT Authorization
 // @host 		localhost:8899
 // @BasePath 	/api
 
@@ -57,10 +58,12 @@ func main() {
 
 	// # ALL APIs Routing
 	router.APIRouting(appConfig, db, basePath)
+	fmt.Println("Server Config")
+	fmt.Println(appConfig)
 
 	// # Server
 	server := &http.Server{
-		Addr:    ":8899",
+		Addr:    ":" + appConfig.ServerPort,
 		Handler: appRoute,
 	}
 	log.Info().Msg("Yea Boy!.. Application is running!")
