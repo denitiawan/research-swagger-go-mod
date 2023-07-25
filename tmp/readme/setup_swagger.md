@@ -1,7 +1,7 @@
 [Back](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/README.md)
 
 ## How to setup swagger on (go.mod & GIN)
-![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/961c63b7-eb50-42f7-9f54-3381631fd641)
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/dafbf873-1474-4d0a-b1f2-f40560b030f2)
 
 ### 1. Install Swagger-CLI
 
@@ -88,27 +88,35 @@ _ "denitiawan/research-swagger-gomod-gin/docs"
 add annotation above on main function
 
 ```
-// @version		1.0
-// @title 		Nexsoft Demo Swagger in GO
-// @description How to implement swagger-ui in Go and gin http client project
-// @host 		localhost:8899
-// @BasePath 	/api
-func main() {
-....
-....
-}
-```
-
-swagger notes
-
-```
+// --[swagger notes]------------------------------------------
 // annotations		: Annotation used for Swagger-UI
 //					and will be mapping to folder and files (./root/docs/**)
 // docs import		: import ( _ "denitiawan/research-swagger-gomod-gin/docs" )
 //					will be used for update all values on all files inside that folder
 //					when you run syntax (swag init)
 // url swagger-ui 	: http://localhost:8899/nexsoft/doc/api/swagger/index.html
+
+// --[swagger annotation]--------------------------------
+// @version		1.1.0
+// @title 		Demo Swagger-UI (GO+GIN) for Nexsoft Project
+// @description Implement swagger-ui on Go project with gin (web framework) + JWT Authorization
+// @host 		localhost:8899
+// @BasePath 	/api
+
+// --[showing authorize button (but validation jwt is not working)]---------
+// @Security Authorization
+// @securityDefinitions.apikey Authorization
+// @in header
+// @name Authorization
+// @schemes http
+
+func main() {
+....
+....
+}
 ```
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/64e0b7ad-c37d-4f08-8a0b-6ab980aee352)
+[main.go](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/main.go)
 
 ### 5. Add Swagger annotation on controller
 
@@ -118,8 +126,9 @@ add annotation above all controller function (CRUD)
 // @Tags			user
 // @Router			/v1/user/save [post]
 // @Summary			save
-// @Description	                save
+// @Description		save
 // @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Param			Authorization header string true "Authorization"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Create(ctx *gin.Context) {
@@ -129,7 +138,8 @@ func (controller *UserController) Create(ctx *gin.Context) {
 }
 
 ```
-
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/8e613ca2-e6a8-4767-bd02-8ef7d65687ca)
+[UserController.go](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/module/user/user_controller.go)
 ### 6. open swagger ui on web
 update swagger files
 ```
