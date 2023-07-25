@@ -2,12 +2,15 @@
 
 Research how to implement swagger on go (go.mod) using gin
 
-![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/961c63b7-eb50-42f7-9f54-3381631fd641)
+![image](https://github.com/denitiawan/research-swagger-gomod-gin/assets/11941308/5668ee0c-504d-40aa-8494-54fbdcf6c53f)
 
 
 ## Librarries
 
 ```
+# go version
+go 1.18
+
 # Web Framework & Router
 github.com/gin-gonic/gin v1.9.1
 
