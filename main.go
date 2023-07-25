@@ -23,7 +23,12 @@ import (
 // @host 		localhost:8899
 // @BasePath 	/api
 
-//
+// ------authorize button is not working--------------------------------------
+// Security Authorization
+// securityDefinitions.apikey Authorization
+// in header
+// name Authorization
+// schemes http
 func main() {
 
 	log.Info().Msg("Try to start Application!")

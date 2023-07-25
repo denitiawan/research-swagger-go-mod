@@ -32,7 +32,10 @@
 - Middleware : implement validation JWT token when user hit all APIs
 
 ## version : 1.5.0 | release date : 25/07/2023
-implement swagger Authorization button
+- implement swagger Authorization button (button authorize show, but cannot impact to all APIs when execute )
+
+## version : 1.6.0 | release date : 25/07/2023
+- swagger doc : add param type header "Authorization" for validate & secure all APIs when execute
 
 
 

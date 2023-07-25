@@ -47,300 +47,6 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/category/delete/{id}": {
-            "delete": {
-                "description": "delete",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "category"
-                ],
-                "summary": "delete",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (CategoryDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/category/list": {
-            "get": {
-                "description": "list",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "category"
-                ],
-                "summary": "list",
-                "responses": {
-                    "200": {
-                        "description": "Response Success (CategoryDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/category/save": {
-            "post": {
-                "description": "save",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "category"
-                ],
-                "summary": "save",
-                "parameters": [
-                    {
-                        "description": "CategoryDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (CategoryDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/category/update/{id}": {
-            "put": {
-                "description": "update",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "category"
-                ],
-                "summary": "update",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "CategoryDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (CategoryDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/category/view/{id}": {
-            "get": {
-                "description": "view",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "category"
-                ],
-                "summary": "view",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (CategoryDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/category.CategoryDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/product/delete/{id}": {
-            "delete": {
-                "description": "delete",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "product"
-                ],
-                "summary": "delete",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (ProductDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/product/list": {
-            "get": {
-                "description": "list",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "product"
-                ],
-                "summary": "list",
-                "responses": {
-                    "200": {
-                        "description": "Response Success (ProductDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/product/save": {
-            "post": {
-                "description": "save",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "product"
-                ],
-                "summary": "save",
-                "parameters": [
-                    {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (ProductDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/product/update/{id}": {
-            "put": {
-                "description": "update",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "product"
-                ],
-                "summary": "update",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "ProductDto.go",
-                        "name": "RequestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (ProductDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/product/view/{id}": {
-            "get": {
-                "description": "view",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "product"
-                ],
-                "summary": "view",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "id",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response Success (ProductDto.go)",
-                        "schema": {
-                            "$ref": "#/definitions/product.ProductDto"
-                        }
-                    }
-                }
-            }
-        },
         "/v1/user/delete/{id}": {
             "delete": {
                 "description": "delete",
@@ -352,6 +58,13 @@ const docTemplate = `{
                 ],
                 "summary": "delete",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "integer",
                         "description": "id",
@@ -380,6 +93,15 @@ const docTemplate = `{
                     "user"
                 ],
                 "summary": "list",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Response Success (UserDto.go)",
@@ -409,6 +131,13 @@ const docTemplate = `{
                         "schema": {
                             "$ref": "#/definitions/user.UserDto"
                         }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -432,6 +161,13 @@ const docTemplate = `{
                 ],
                 "summary": "update",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "integer",
                         "description": "id",
@@ -471,6 +207,13 @@ const docTemplate = `{
                 "summary": "view",
                 "parameters": [
                     {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
                         "type": "integer",
                         "description": "id",
                         "name": "id",
@@ -506,48 +249,6 @@ const docTemplate = `{
                     "type": "string",
                     "maxLength": 200,
                     "minLength": 1
-                }
-            }
-        },
-        "category.CategoryDto": {
-            "type": "object",
-            "required": [
-                "name"
-            ],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "maximum": 10,
-                    "minimum": 1
-                },
-                "name": {
-                    "type": "string",
-                    "maxLength": 200,
-                    "minLength": 1
-                }
-            }
-        },
-        "product.ProductDto": {
-            "type": "object",
-            "required": [
-                "name",
-                "price"
-            ],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "maximum": 10,
-                    "minimum": 1
-                },
-                "name": {
-                    "type": "string",
-                    "maxLength": 200,
-                    "minLength": 1
-                },
-                "price": {
-                    "type": "number",
-                    "maximum": 11,
-                    "minimum": 1
                 }
             }
         },

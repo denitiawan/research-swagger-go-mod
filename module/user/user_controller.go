@@ -23,6 +23,7 @@ func NewUserController(service UserService) *UserController {
 // @Summary			save
 // @Description		save
 // @Param			RequestBody body user.UserDto true "UserDto.go"
+// @Param			Authorization header string true "Authorization"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) Create(ctx *gin.Context) {
@@ -51,6 +52,7 @@ func (controller *UserController) Create(ctx *gin.Context) {
 // @Router			/v1/user/update/{id} [put]
 // @Summary			update
 // @Description		update
+// @Param			Authorization header string true "Authorization"
 // @Param			id  path int true "id"
 // @Param			RequestBody body UserDto true "UserDto.go"
 // @Produce			application/json
@@ -85,6 +87,7 @@ func (controller *UserController) Update(ctx *gin.Context) {
 // @Router			/v1/user/delete/{id} [delete]
 // @Summary			delete
 // @Description		delete
+// @Param			Authorization header string true "Authorization"
 // @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
@@ -109,6 +112,7 @@ func (controller *UserController) Delete(ctx *gin.Context) {
 // @Router			/v1/user/view/{id} [get]
 // @Summary			view
 // @Description		view
+// @Param			Authorization header string true "Authorization"
 // @Param			id  path int true "id"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
@@ -135,6 +139,7 @@ func (controller *UserController) FindById(ctx *gin.Context) {
 // @Router			/v1/user/list [get]
 // @Summary			list
 // @Description		list
+// @Param			Authorization header string true "Authorization"
 // @Produce			application/json
 // @Success			200 {object} user.UserDto{} "Response Success (UserDto.go)"
 func (controller *UserController) FindAll(ctx *gin.Context) {
