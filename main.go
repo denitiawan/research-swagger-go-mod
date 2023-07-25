@@ -24,12 +24,13 @@ import (
 // @host 		localhost:8899
 // @BasePath 	/api
 
-// ------authorize button is not working--------------------------------------
-// Security Authorization
-// securityDefinitions.apikey Authorization
-// in header
-// name Authorization
-// schemes http
+// ------showing authorize button (but validation jwt is not working)---------
+// @Security Authorization
+// @securityDefinitions.apikey Authorization
+// @in header
+// @name Authorization
+// @schemes http
+// ------showing authorize button (but validation jwt is not working)---------
 func main() {
 
 	log.Info().Msg("Try to start Application!")
