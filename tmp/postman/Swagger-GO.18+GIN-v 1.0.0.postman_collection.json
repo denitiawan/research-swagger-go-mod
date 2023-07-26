@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "49d64e4a-468f-4a6f-a005-a42e0f295961",
+		"name": "Swagger-GO.18+GIN-v 1.0.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAyNDU4MzIsImlhdCI6MTY5MDI0MjIzMiwibmJmIjoxNjkwMjQyMjMyLCJzdWIiOjEyfQ.u_Yy_8w52m_4Zc9yKCGlnERGx18gMvdEuobsSHBpwmw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"adnan\",\r\n    \"username\":\"adnan\",\r\n    \"password\":\"adnan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8899/api/v1/user/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8899",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAyNDU4MzIsImlhdCI6MTY5MDI0MjIzMiwibmJmIjoxNjkwMjQyMjMyLCJzdWIiOjEyfQ.u_Yy_8w52m_4Zc9yKCGlnERGx18gMvdEuobsSHBpwmw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"Id\": 1,\r\n            \"Name\": \"srsuntour\",\r\n            \"Username\": \"durolux\",\r\n            \"Password\": \"160\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8899/api/v1/user/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8899",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAyODAwNDYsImlhdCI6MTY5MDI3NjQ0NiwibmJmIjoxNjkwMjc2NDQ2LCJzdWIiOjEyfQ.LsqL1iwSZKWI3K3cA2mcPuefCHQ4Yiuz5R2K_0XpiLM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8899/api/v1/user/view/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8899",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"view",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAyNjQ0NTcsImlhdCI6MTY5MDI2MDg1NywibmJmIjoxNjkwMjYwODU3LCJzdWIiOjE0fQ.lTPddlW-5DYD7H8Fr8FAJ3qCNKovh2TPd0Ifrk-zIXg",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8899/api/v1/user/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8899",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAyNjQ0NTcsImlhdCI6MTY5MDI2MDg1NywibmJmIjoxNjkwMjYwODU3LCJzdWIiOjE0fQ.lTPddlW-5DYD7H8Fr8FAJ3qCNKovh2TPd0Ifrk-zIXg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8899/api/v1/user/delete/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8899",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"delete",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"adnan\",\r\n    \"password\":\"adnan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8899/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
