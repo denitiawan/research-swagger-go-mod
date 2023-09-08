@@ -40,25 +40,6 @@ go mod tidy
 Mysql
 ```
 
-## Run APP
-
-[docker-compose.yml](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/docker-compose/docker-compose.yml)
-
-```
-# run syntax
-docker-compose up -d
-
-# docker will create docker image (swg_go_mysql)
-host: localhost
-port: 3399      
-user: user
-password: password
-database : database
-```
-
-## postman
-
-[postman](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/postman/Swagger-GO.18-v%201.0.0.postman_collection.json)
 
 ## How to setup swagger on (go.mod & GIN)
 - [Setup Swagger in GO + Gin](https://github.com/denitiawan/research-swagger-gomod-gin/blob/main/tmp/readme/setup_swagger.md)
